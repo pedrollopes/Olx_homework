@@ -21,6 +21,22 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# gem i18n
+gem 'rails-i18n'
+# Flexible authentication solution for Rails with Warden.
+gem 'devise'
+gem 'devise-i18n'
+# Gem for bootstrap
+gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
+# A library for generating fake data such as names, addresses, and phone numbers. 
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
+# Integration of RubyMoney - Money with Rails
+gem 'money-rails'
+# Classier solution for file uploads for Rails, Sinatra and other Ruby web frameworks
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
