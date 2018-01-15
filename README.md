@@ -1,24 +1,37 @@
-# README
+# Olx_homework
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An app olx like where you can register new Users, list their Ads and search for Ads.
 
-Things you may want to cover:
+Project created for learning purposes using Ruby 2.4.2 and Rails 5.0.6.
 
-* Ruby version
+### Inicial setup
+To drop/create/migrate and populate the DB run: 
 
-* System dependencies
+```
+rake utils:setup
+```
 
-* Configuration
+## Gems
 
-* Database creation
+* gem i18n
 
-* Database initialization
+* gem 'rails-i18n'
 
-* How to run the test suite
+* gem 'devise'
+* gem 'devise-i18n'
+ * gem 'rails-assets-bootstrap', '3.3.7'
+* gem 'faker'
+* gem 'money-rails'
+* gem 'carrierwave', '~> 1.0'
+* gem "mini_magick"
+* gem 'pry'
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Project dependencies
 
-* ...
+* ImageMagick (https://www.imagemagick.org)
+
+```
+sudo apt-get update
+sudo apt-get install imagemagick libmagickwand-dev
+```

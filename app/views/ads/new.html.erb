@@ -1,46 +1,68 @@
-
-<h1>Novo Anuncio</h1>
-
-<%= form_for @ad, html: { multipart: true } do |f| %>
-
-<div class="row">
-  <div class="col-xs-6">
-    <div class="form-group">
-      <%= f.label :title %>
-      <%= f.text_field :title, class: "form-control", placeholder: "Título" %>
-    </div>
+<%= stylesheet_link_tag 'ads', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% if @ad.errors.any? %>
+  <div class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <ul>
+      <% @ad.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
   </div>
-</div>
-
-<div class="row">
-  <div class="col-xs-2">
-    <div class="form-group">
-      <%= f.label :price %>
-      <div class="input-group">
-        <div class="input-group-addon"><%= @ad.price.currency.symbol %></div>
-          <%= f.text_field :price, class: "form-control", placeholder: "Título" %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xs-6">
-    <div class="form-group">
-      <%= f.label :image %> <br>
-      <%= f.file_field :image, class: "btn" %>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12">
-    <div class="form-group">
-      <%= f.label :description %>
-      <%= f.text_area :description, class: "form-control", rows: 10 %>
-    </div>
-  </div>
-</div>
-
-<%= submit_tag "Enviar", class: "btn btn-default"  %>
 <% end %>
+<!-- Container -->
+<div class="container">
+  <%= form_for @ad, html: { multipart: true, class: "well form-horizontal" } do |f| %>
+    <fieldset>
+      <legend>Novo Anúncio</legend>
+        <!-- campo Titulo-->
+        <div class="form-group">
+          <%= f.label :title, class: "col-md-4 control-label" %>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-tags"></i></span>
+              <%= f.text_field :title, class: "form-control", placeholder: "Título" %>
+            </div>
+          </div>
+        </div>
+        <!-- campo price currency -->
+        <div class="form-group">
+            <%= f.label :price, class: "col-md-4 control-label" %>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <div class="input-group-addon"><%= @ad.price.currency.symbol %></div>
+                <%= f.text_field :price, class: "form-control", placeholder: "Título" %>
+                  </div>
+            </div>
+          </div>
+        <!-- campo image -->
+        <div class="form-group">
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <%= f.label :image %>
+              <%= f.file_field :image, class: "btn" %>
+            </div>
+          </div>
+        </div>
+        <!-- campo description -->
+        <div class="form-group">
+            <%= f.label :description, class: "col-md-4 control-label" %>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                <%= f.text_area :description, class: "form-control", placeholder: "Descrição" %>
+
+              </div>
+            </div>
+          </div>
+        <!-- Button -->
+        <div class="form-group">
+          <div class="col-md-4">
+            <%= submit_tag "Enviar", class: "btn btn-warning" %>
+            </div>
+        </div>
+
+      </fieldset>
+    <% end %>
+  </div>
+</div>
+<!-- /.container -->

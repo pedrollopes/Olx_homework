@@ -1,47 +1,43 @@
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <%= link_to  "Olx Homework", root_path, class: "navbar-brand" %>
-      </div>
-
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav pull-right ">
-
-                <div class="dropdown">
-                        <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
-													<% if member_signed_in? %>
-															<%= current_member.email %>
-													<% else %>
-															Menu
-													<% end %>
-                        <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-													<% unless member_signed_in? %>
-														<li><%= link_to "Login", new_member_session_path %></li>
-														<li><%= link_to "Registrar", new_member_registration_path %></li>
-													<% else %>
-													  <li><%= link_to "Perfil", profile_index_path %></li>
-														<li><%= link_to "Cadastrar Anúncios", new_ad_path %></li>
-													<% end %>
-
-													<li class="divider"></li>
-                          <li><%= link_to "Logout", destroy_member_session_path, method: :delete %> </li>
-                        </ul>
-                </div> 
-
-          </ul>
-      </div>
-          <!-- /.navbar-collapse -->
+  <div class="container">
+  <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to  "Olx Homework", root_path, class: "navbar-brand" %>
     </div>
-    <!-- /.container -->
-  </nav>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav pull-right ">
+        <div class="dropdown">
+          <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
+            <% if member_signed_in? %>
+              <%= current_member.email %>
+            <% else %>
+              Menu
+            <% end %>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <% unless member_signed_in? %>
+              <li><%= link_to "Login", new_member_session_path %></li>
+              <li><%= link_to "Registrar", new_member_registration_path %></li>
+            <% else %>
+              <li><%= link_to "Meus Anúncios", profile_index_path %></li>
+              <li><%= link_to "Cadastrar Anúncios", new_ad_path %></li>
+            <% end %>
+            <li class="divider"></li>
+            <li><%= link_to "Logout", destroy_member_session_path, method: :delete %> </li>
+          </ul>
+        </div> 
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
