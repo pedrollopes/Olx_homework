@@ -2,7 +2,7 @@
 
 An app olx like where you can register new Users, list their Ads and search for Ads.
 
-Project created for learning purposes using Ruby 2.4.2 and Rails 5.0.6.
+Project created using Ruby 2.4.2 and Rails 5.0.6.
 
 ### Inicial setup
 To drop/create/migrate and populate the DB run: 
